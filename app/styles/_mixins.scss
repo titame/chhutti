@@ -1,0 +1,19 @@
+@mixin middle-aligned-inline-block {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+@mixin selected-item {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
+            width="35" height="35" viewBox="-10 -18 100 135">
+            <path fill="papayawhip" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+  color: papayawhip;
+  float: right;
+  margin-top: -7px;
+}
+
+@mixin background-size($value) {
+  -webkit-background-size: $value;
+  -moz-background-size: $value;
+  background-size: $value;
+}

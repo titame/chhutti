@@ -1,0 +1,39 @@
+@import 'variables/color';
+
+.autocomplete-list {
+  background-color: $theme-color-red;
+  color: white;
+  list-style: none;
+  margin-left: 4%;
+  text-align: left;
+  font-size: 11px;
+  max-height: 160px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  z-index: 1;
+  width: 93%;
+  li {
+    padding: 10px 10px;
+    border-bottom: 1px solid $color-gallery;
+    cursor: pointer;
+  }
+}
+
+.auto-ellipsis {
+  display: inline-block;
+  max-width: 50%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.auto-ellipsis:last-child:before {
+  content: ", "
+}
+
+.focused-li {
+  background-color: $theme-color-light-red;
+  outline: none !important;
+}

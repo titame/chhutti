@@ -1,0 +1,172 @@
+@import 'variables/color';
+@import 'mixins/mixins';
+@import 'partials/page-transition';
+@import 'partials/header';
+@import 'partials/confirm-dialog';
+@import 'partials/filter-header';
+@import 'partials/filter-list';
+@import 'partials/comment-box';
+@import 'partials/user-rating';
+@import 'partials/topic-details';
+@import 'partials/topic-distance';
+@import 'partials/tag';
+@import 'partials/tag-cloud';
+@import 'partials/tag-container';
+@import 'partials/display-media';
+@import 'partials/card-element';
+@import 'partials/category-list';
+@import 'partials/autocomplete-item';
+@import 'partials/search';
+@import 'partials/detail-view';
+@import 'partials/city';
+@import 'partials/search-by-city';
+@import 'partials/clapinq-app';
+@import 'partials/media';
+@import 'partials/foundation-override';
+@import 'partials/styled-scroller';
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  line-height: 1 !important;
+}
+
+html, body {
+  height: auto;
+}
+
+.remodal button:hover {
+  background: transparent;
+}
+
+.toast-info {
+  background-color: $theme-color-red;
+}
+
+.user-image {
+  background-image: url("../img/default-user.jpg");
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  border: 3px solid $theme-color-dark-red-1;
+  top: 10px;
+  margin: auto;
+  display: inline-block;
+}
+
+/* Making main section scrollable and avoiding scrollbar on body
+  Avoid scrolling of body when ofcanvas menu is visible */
+.main-section {
+  margin-top: 45px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.off-canvas-wrap, .inner-wrap, .main-section {
+  height: 100vh;
+}
+
+.selected-filter, .selected-city {
+  background-color: $theme-color-red !important;
+  font-weight: bold;
+}
+
+#card-list {
+  margin-top: 20px !important;
+}
+
+.card, .placeholder {
+  background-color: white;
+  box-shadow: 0 2px 5px 0 $color-black-16, 0 2px 10px 0 $color-black-12;
+  -webkit-box-shadow: 0 2px 5px 0 $color-black-16, 0 2px 10px 0 $color-black-12;
+  -mox-box-shadow: 0 2px 5px 0 $color-black-16, 0 2px 10px 0 $color-black-12;
+  margin: auto;
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 12px;
+  display: none;
+  text-align: center;
+}
+
+.remodal-close, .remodal-close:hover {
+  color: white;
+}
+
+.scroll-loader {
+  text-align: center;
+  width: 100%;
+  display: none;
+  margin-bottom: 18px;
+}
+
+.comment-loader, .scroll-loader, .ratings-loader {
+  .spinner-loader {
+    font-size: 5px;
+  }
+}
+
+.back-btn {
+  border-radius: 5px;
+  background-color: $theme-color-dark-red;
+  display: inline-block;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px 10px;
+  line-height: 1em;
+  margin-left: 7px;
+  a {
+    color: white;
+  }
+}
+
+.back-btn div {
+  @include middle-aligned-inline-block;
+  margin-left: 5px;
+}
+
+.container-enter {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+}
+
+.enter-active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+.leave-active {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  transform: scale(0);
+}
